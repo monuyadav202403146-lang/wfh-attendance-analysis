@@ -100,7 +100,24 @@ B.Sc. Computer Science | TSDC, Mumbai University
 - **GitHub:** https://github.com/monuyadav202403146-lang
 
 ---
+# WFH & Employee Attendance Analysis
 
-**Technologies Used:** Microsoft Excel | MySQL 8.0 | SQL | Data Cleaning | Data Analysis | Dashboard Development
+## 📊 Power BI / Excel Dashboard
+![Dashboard](screenshots/dashboard.png)
 
-**Project Focus:** Workforce Analytics | Attendance Analysis | WFH vs Office Comparison | Productivity Analysis
+## 📈 WFH vs Office Analysis
+![WFH Analysis](screenshots/wfh-analysis.png)
+
+## 📅 Monthly Trends
+![Monthly Trends](screenshots/monthly-trends.png)
+
+## 👥 Employee Analysis
+![Employee Analysis](screenshots/employee-analysis.png)
+
+## 🛠️ Tools & Technologies
+- Microsoft Excel
+- MySQL 8.0
+- SQL
+- Data Cleaning
+- Data Visualization
+
