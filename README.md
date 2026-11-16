@@ -70,12 +70,7 @@ The following data cleaning operations were performed:
 
 ## How to Run the SQL Project (DB Fiddle)
 
-1. Open [DB Fiddle](https://dbfiddle.uk/).
-2. Select **MySQL 8.0** as the database engine.
-3. Copy the complete contents of `online_schema.sql` into the left panel (**Schema SQL**).
-4. Click **Build** to create the tables, insert data, perform cleaning, and create the analysis view.
-5. Copy one query at a time from `online_queries.sql` into the right panel (**Query SQL**).
-6. Click **Run** to execute the selected query and view its results.
+link:https://drive.google.com/file/d/1znpPDDFMptLPBrKAKrRSoQHD2UjWoMsI/view?usp=drive_link
 
 **Note:** DB Fiddle displays the result of the query being executed. Run each query individually to view all 11 analysis results.
 
