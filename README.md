@@ -1,87 +1,111 @@
 # WFH & Employee Attendance Analysis (Excel + SQL)
 
-Is project mein 30 employees ka Jan–Jun 2026 ka attendance data clean kiya gaya hai, aur **Work From Home vs Office** ka comparison kiya gaya hai: attendance, productivity, punctuality aur monthly trends.
+This project analyzes attendance data for **30 employees from January to June 2026**. The data was cleaned and analyzed to compare **Work From Home (WFH) vs Work From Office (WFO)** across attendance, productivity, punctuality, and monthly trends.
 
 ## Files
 
-| File | Kya hai |
+| File | Description |
 |---|---|
-| `WFH_Attendance_Analysis.xlsx` | Main project: Dashboard, README, Employees, Raw_Attendance, Clean_Attendance, Q1–Q11 analysis sheets, SQL_Queries |
-| `online_schema.sql` | MySQL 8.0 script: tables, raw data (30 + 3,798 rows), data cleaning, analysis view `vw_attendance` |
-| `online_queries.sql` | 11 analysis queries (Q1–Q11) |
+| `WFH_Attendance_Analysis.xlsx` | Main project workbook containing Dashboard, README, Employees, Raw_Attendance, Clean_Attendance, Q1–Q11 analysis sheets, and SQL_Queries. |
+| `online_schema.sql` | MySQL 8.0 script containing table creation, raw data (30 employees + 3,798 attendance rows), data cleaning, and the analysis view `vw_attendance`. |
+| `online_queries.sql` | Contains 11 SQL analysis queries (Q1–Q11). |
 
-## Excel sheets
+## Excel Workbook Sheets
 
-1. **Dashboard** - 6 KPI tiles, key insights (formulas se auto-update), 7 charts
-2. **README** - sheets ki list, cleaning rules, definitions
-3. **Employees** - master table (30 employees, 5 departments)
-4. **Raw_Attendance** - raw data jaisa SQL mein insert hua (messy)
-5. **Clean_Attendance** - cleaned data + derived columns (`ym`, `weekday`, `hours_worked`, `attended`, `productivity`, `is_late`) formulas ke saath
-6. **Q1 – Q11** - har SQL query ka result (COUNTIFS / SUMIFS / AVERAGEIFS / RANK formulas)
-7. **SQL_Queries** - original queries reference ke liye
+1. **Dashboard** – Includes 6 KPI tiles, key insights (automatically updated using formulas), and 7 charts.
+2. **README** – Contains the sheet descriptions, data cleaning rules, and metric definitions.
+3. **Employees** – Employee master table containing 30 employees across 5 departments.
+4. **Raw_Attendance** – Original messy attendance data, matching the data inserted into SQL.
+5. **Clean_Attendance** – Cleaned attendance data with derived columns such as `ym`, `weekday`, `hours_worked`, `attended`, `productivity`, and `is_late`, calculated using formulas.
+6. **Q1–Q11** – Individual analysis results corresponding to each SQL query, using Excel functions such as COUNTIFS, SUMIFS, AVERAGEIFS, and RANK.
+7. **SQL_Queries** – Reference sheet containing the original SQL queries.
 
-## Analysis (Q1 – Q11)
+## SQL Analysis (Q1–Q11)
 
-| Query | Kya nikalta hai |
+| Query | Analysis |
 |---|---|
-| Q1 | WFH vs Office overall comparison |
-| Q2 | Department-wise WFH vs Office (attendance + productivity) |
-| Q3 | Weekday pattern: kis din log WFH karte hain |
-| Q4 | Monthly attendance trend (Office vs WFH) |
-| Q5 | Monthly productivity + month-over-month change (`LAG`) |
-| Q6 | Department productivity trend by month |
-| Q7 | Employee productivity ranking (`RANK`, overall + department) |
-| Q8 | Employees jo ghar pe 5+ points kam productive hain |
-| Q9 | Attendance risk list (95% se kam) |
-| Q10 | Punctuality: late arrivals by work mode & department |
-| Q11 | Kya zyada WFH ka matlab kam productivity? |
+| Q1 | Overall comparison of WFH vs Office attendance and productivity. |
+| Q2 | Department-wise WFH vs Office comparison (attendance and productivity). |
+| Q3 | Weekday patterns showing which days employees prefer working from home. |
+| Q4 | Monthly attendance trends (Office vs WFH). |
+| Q5 | Monthly productivity trends and month-over-month changes using `LAG()`. |
+| Q6 | Department-wise monthly productivity trends. |
+| Q7 | Employee productivity rankings (overall and department-wise) using `RANK()`. |
+| Q8 | Identifies employees whose productivity is 5+ percentage points lower when working from home. |
+| Q9 | Identifies employees with attendance below 95%. |
+| Q10 | Punctuality analysis: late arrivals by work mode and department. |
+| Q11 | Analyzes whether higher WFH participation is associated with lower productivity. |
 
-## Data cleaning
+## Data Cleaning Process
 
-Raw data jaan-boojhkar messy rakha gaya hai (saare columns `VARCHAR`), phir SQL mein ye steps hue:
+The raw dataset was intentionally designed with inconsistencies to simulate real-world attendance data. All columns were initially stored as `VARCHAR` in SQL.
 
-- `emp_id` trim + uppercase (`' E001'`, `'e001'` → `E001`)
-- 3 date formats ek standard mein: `yyyy-mm-dd`, `dd/mm/yyyy`, `dd-mm-yyyy`
-- Work mode standard: `WFO / In Office / office` → **Office**, `Work From Home / Home / wfh` → **WFH**
-- Status standard: `P / PRESENT / present` → **Present**, aur Absent / Leave / Half Day
-- 12-hour times (`06:46 PM`) → 24-hour
-- Duplicate rows hataye (`emp_id + work_date` pe)
-- Present rows ke missing check-in/out ko us employee ke average time se fill kiya
-- `tasks_completed` ko `tasks_assigned` pe cap kiya
+The following data cleaning operations were performed:
 
-**Result:** 3,798 raw rows → 3,750 clean rows (48 duplicates hataye, 44 rows mein time imputed, 14 mein tasks capped).
+- **Employee ID Standardization:** Trimmed whitespace and converted employee IDs to uppercase (e.g., `' E001'`, `'e001'` → `E001`).
+- **Date Standardization:** Converted three different date formats into a consistent `YYYY-MM-DD` format.
+- **Work Mode Standardization:** Converted variations such as `WFO`, `In Office`, and `office` into **Office**, and `Work From Home`, `Home`, and `wfh` into **WFH**.
+- **Attendance Status Standardization:** Standardized `P`, `PRESENT`, and `present` into **Present**, along with Absent, Leave, and Half Day.
+- **Time Conversion:** Converted 12-hour time formats (e.g., `06:46 PM`) into 24-hour format.
+- **Duplicate Removal:** Removed duplicate records based on `emp_id + work_date`.
+- **Missing Time Handling:** Filled missing check-in and check-out times for present records using the respective employee's average time.
+- **Task Validation:** Capped `tasks_completed` at `tasks_assigned` to prevent invalid productivity values.
 
-## Metric definitions
+**Data Cleaning Results:**
 
-- **Attended** = status `Present` ya `Half Day`
-- **Attendance %** = attended / (attended + absent)
-- **Productivity** = tasks completed / tasks assigned (sirf attended days)
-- **Late** = check-in 10:00 ke baad
+| Metric | Result |
+|---|---:|
+| Raw Attendance Records | 3,798 |
+| Clean Attendance Records | 3,750 |
+| Duplicate Records Removed | 48 |
+| Records with Imputed Time Values | 44 |
+| Records with Capped Task Values | 14 |
 
-## SQL run karne ka tarika (DB Fiddle)
+## Metric Definitions
 
-1. [dbfiddle.uk](https://dbfiddle.uk) kholo aur **MySQL 8.0** select karo
-2. `online_schema.sql` ka poora content **left panel (Schema SQL)** mein paste karo, phir **Build** dabao
-3. `online_queries.sql` se **ek time pe ek query** **right panel (Query SQL)** mein paste karo aur **Run** dabao (panel sirf last query ka result dikhata hai)
+- **Attended:** Records with status `Present` or `Half Day`.
+- **Attendance %:** Attended days / (Attended days + Absent days).
+- **Productivity:** Tasks completed / Tasks assigned (calculated only for attended days).
+- **Late Arrival:** Check-in time after 10:00 AM.
 
-MySQL Workbench mein bhi chalega: pehle `online_schema.sql` run karo, phir queries ek-ek karke.
+## How to Run the SQL Project (DB Fiddle)
 
-## Key findings
+1. Open [DB Fiddle](https://dbfiddle.uk/).
+2. Select **MySQL 8.0** as the database engine.
+3. Copy the complete contents of `online_schema.sql` into the left panel (**Schema SQL**).
+4. Click **Build** to create the tables, insert data, perform cleaning, and create the analysis view.
+5. Copy one query at a time from `online_queries.sql` into the right panel (**Query SQL**).
+6. Click **Run** to execute the selected query and view its results.
 
-- Attendance: Office **96.6%** vs WFH **98.5%**
-- Productivity lagbhag same: Office **81.4%** vs WFH **81.1%**
-- Late arrivals WFH mein zyada: **36.4%** vs Office **15.2%**
-- Mon aur Fri ko WFH share sabse zyada hai (**58.8%** aur **56.3%**)
-- 4 employees ghar pe 5+ points kam productive hain: Suresh Pawar, Sneha Iyer, Gaurav Jain, Priya Sharma
-- 3 employees ki attendance 95% se kam hai: Rohan Mehta, Priya Sharma, Tanvi Kamat
+**Note:** DB Fiddle displays the result of the query being executed. Run each query individually to view all 11 analysis results.
 
-## Important
+The project can also be executed using **MySQL Workbench**. First, run `online_schema.sql`, followed by the analysis queries one at a time.
 
-- Data **sample** hai (Jan–Jun 2026). Real company data ho to `raw_attendance` ko usi column format mein replace karo.
-- Excel mein Q8, Q9 aur Q11 ki employee lists data se tay hui hain. Data badla to numbers update honge, lekin list mein kaun aayega woh nahi badlega.
-- Dashboard ke charts ka Y-axis range fixed hai (jaise attendance 90–100). Data bahut badle to axis adjust karna padega.
+## Key Findings
+
+- **Attendance Rate:** Office – **96.6%** vs WFH – **98.5%**.
+- **Productivity:** Office – **81.4%** vs WFH – **81.1%**, indicating nearly identical productivity levels.
+- **Late Arrivals:** WFH – **36.4%** vs Office – **15.2%**.
+- **WFH Preferences:** Monday (58.8%) and Friday (56.3%) have the highest WFH shares.
+- **Productivity Differences:** 4 employees have productivity at least 5 percentage points lower when working from home: Suresh Pawar, Sneha Iyer, Gaurav Jain, and Priya Sharma.
+- **Attendance Risks:** 3 employees have attendance rates below 95%: Rohan Mehta, Priya Sharma, and Tanvi Kamat.
+
+## Important Notes
+
+- The dataset is **sample data** covering January–June 2026. For real-world use, replace the `raw_attendance` table data with actual company attendance records using the same column structure.
+- The employee lists in Excel sheets Q8, Q9, and Q11 were manually determined from the current dataset. Although numerical results update when the data changes, the employee lists will not automatically update.
+- Dashboard chart Y-axis ranges are fixed (for example, attendance charts use a 90–100 range). If the dataset changes significantly, the chart axis ranges may need manual adjustment.
 
 ## Author
 
-**Monu Yadav** - B.Sc. Computer Science, TSDC (Mumbai University)
-[LinkedIn](https://www.linkedin.com/in/monu-yadav-34b59825b/) · [GitHub](https://github.com/monu827)
+**Monu Yadav**  
+B.Sc. Computer Science | TSDC, Mumbai University
+
+- **LinkedIn:** https://www.linkedin.com/in/monu-yadav-34b59825b/
+- **GitHub:** https://github.com/monuyadav202403146-lang
+
+---
+
+**Technologies Used:** Microsoft Excel | MySQL 8.0 | SQL | Data Cleaning | Data Analysis | Dashboard Development
+
+**Project Focus:** Workforce Analytics | Attendance Analysis | WFH vs Office Comparison | Productivity Analysis
