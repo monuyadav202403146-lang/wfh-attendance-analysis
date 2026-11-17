@@ -64,7 +64,7 @@ This project analyzes attendance data for 30 employees from January to June 2026
 | Q11 | Analyzes whether higher WFH participation is associated with lower productivity. |
 
 ## 📊 WFH & Employee Attendance Dashboard
--Dashboard interaction 
+**[View the interactive dashboard](https://monuyadav202403146-lang.github.io/wfh-attendance-analysis/)**
  
 ## Data Cleaning Process
  
