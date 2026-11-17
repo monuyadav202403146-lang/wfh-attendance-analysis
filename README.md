@@ -120,11 +120,9 @@ The project can also be executed using MySQL Workbench. First, run `online_schem
 ---
  
 ## 📊 Final Dashboard
-## DASHBOARD REPORT
 
 ## ATTENDANCE ANALYSIS
 <img width="1186" height="486" alt="image" src="https://github.com/user-attachments/assets/d81c8236-de13-4959-8a03-6296295bee10" />
-
 
 ## WORK FROM HOME VS OFFICE
 <img width="1128" height="518" alt="image" src="https://github.com/user-attachments/assets/f0e19115-a10c-4f9b-a11f-21c97383dcd4" />
