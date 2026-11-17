@@ -116,13 +116,7 @@ The project can also be executed using MySQL Workbench. First, run `online_schem
 - The dataset is sample data covering January–June 2026. For real-world use, replace the `raw_attendance` table data with actual company attendance records using the same column structure.
 - The employee lists in Excel sheets Q8, Q9, and Q11 were manually determined from the current dataset. Although numerical results update when the data changes, the employee lists will not automatically update.
 - Dashboard chart Y-axis ranges are fixed (for example, attendance charts use a 90–100 range). If the dataset changes significantly, the chart axis ranges may need manual adjustment.
-## 🛠️ Tools & Technologies
- 
-SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
- 
- 
-- LinkedIn: https://www.linkedin.com/in/monu-yadav-34b59825b/
-- GitHub: https://github.com/monuyadav202403146-lang
+
 ---
  
 ## 📊 Final Dashboard
@@ -130,19 +124,15 @@ SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
 
 
 
- 
+
 
  
-Interactive dashboard built on a relationship between `Clean_Attendance` and `Employees`, with a department filter.
+## 🛠️ Tools & Technologies
  
-### Key KPIs
+SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
  
-| Metric | Value |
-|---|---|
-| Records analysed | 3,750 |
-| Overall attendance | 97.4% |
-| WFH share of attended days | 42.7% |
-| Average productivity | 81.3% |
-| Late arrivals | 24.2% |
-| Average hours / day | 8.56 hrs |
  
+- LinkedIn: https://www.linkedin.com/in/monu-yadav-34b59825b/
+- GitHub: https://github.com/monuyadav202403146-lang
+ 
+
