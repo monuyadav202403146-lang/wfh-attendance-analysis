@@ -128,6 +128,10 @@ SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
  
 ## 📊 Final Dashboard
 
+## 📊 Dashboard Preview
+
+![WFH Attendance Dashboard](WFH_Attendance_Dashboard.png)
+
 
  
 
