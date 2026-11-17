@@ -64,7 +64,7 @@ This project analyzes attendance data for 30 employees from January to June 2026
 | Q11 | Analyzes whether higher WFH participation is associated with lower productivity. |
 
 ## 📊 WFH & Employee Attendance Dashboard
--Dashboard interaction <a href=[WFH Attendance Dashboard](dashboard.png)>View Dashboard</a>
+-Dashboard interaction 
  
 ## Data Cleaning Process
  
