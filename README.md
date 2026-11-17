@@ -15,8 +15,8 @@ This project analyzes attendance data for 30 employees from January to June 2026
 ## Dataset
 
 > The dataset is synthetic (sample data generated for this project). It is not real company data.
--<ahttps://1drv.ms/x/c/ee2e7d1377aeb9e2/IQBwIg2wWWeXRqn01RYour1tAT9PWwkAFxy-xQ6G2HOg7-g?e=TtFJAN>
 
+https://1drv.ms/x/c/ee2e7d1377aeb9e2/IQBwIg2wWWeXRqn01RYour1tAT9PWwkAFxy-xQ6G2HOg7-g?e=TtFJAN
 
 **Period:** Jan-Jun 2026 | **Employees:** 30 | **Departments:** Sales, IT, HR, Finance, Operations, Marketing
 
