@@ -62,6 +62,9 @@ This project analyzes attendance data for 30 employees from January to June 2026
 | Q9 | Identifies employees with attendance below 95%. |
 | Q10 | Punctuality analysis: late arrivals by work mode and department. |
 | Q11 | Analyzes whether higher WFH participation is associated with lower productivity. |
+
+## 📊 WFH & Employee Attendance Dashboard
+-Dashboard interaction <a href=[WFH Attendance Dashboard](dashboard.png)>View Dashboard</a>
  
 ## Data Cleaning Process
  
