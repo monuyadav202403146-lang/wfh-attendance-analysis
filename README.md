@@ -120,16 +120,31 @@ The project can also be executed using MySQL Workbench. First, run `online_schem
 ---
  
 ## 📊 Final Dashboard
+## DASHBOARD REPORT
+
+## ATTENDANCE ANALYSIS
+<img width="1186" height="486" alt="image" src="https://github.com/user-attachments/assets/d81c8236-de13-4959-8a03-6296295bee10" />
 
 
+## WORK FROM HOME VS OFFICE
+<img width="1128" height="518" alt="image" src="https://github.com/user-attachments/assets/f0e19115-a10c-4f9b-a11f-21c97383dcd4" />
 
+## MONTHLY PRODUCTIVITY REPORT
+<img width="1216" height="698" alt="image" src="https://github.com/user-attachments/assets/2fd48333-cf3c-4862-9960-ee48e870f408" />
 
+## DEPARTMENT-WISE ANALYSIS
+<img width="1122" height="420" alt="image" src="https://github.com/user-attachments/assets/f2e27ffd-4874-468b-b4c1-6339810f0ffe" />
 
+## EMPLOYEE PERFORMANCE REPORT
+<img width="1016" height="428" alt="image" src="https://github.com/user-attachments/assets/0a6c63e7-94b1-41da-a03a-a9d8e8f6849b" />
 
  
 ## 🛠️ Tools & Technologies
  
-SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
+  SQL (MySQL 8.0) 
+· Microsoft Excel
+· Tableau
+· GitHub
  
  
 - LinkedIn: https://www.linkedin.com/in/monu-yadav-34b59825b/
