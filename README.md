@@ -126,30 +126,11 @@ SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
 - GitHub: https://github.com/monuyadav202403146-lang
 ---
  
-## 📊 Dashboard
+## 📊 Final Dashboard
+
+
  
-### 1. Main Dashboard
-![Main Dashboard](images/dashboard.png)
- 
-6 KPI tiles, key insights and 7 charts, all driven by live formulas on the `Clean_Attendance` sheet.
- 
-### 2. WFH vs Office Analysis
-![WFH vs Office](images/wfh-vs-office.png)
- 
-Overall and department-wise comparison of attendance, productivity and punctuality.
- 
-### 3. Monthly Trends
-![Monthly Trends](images/monthly-trends.png)
- 
-Month-by-month attendance and productivity, including month-over-month change.
- 
-### 4. Employee Analysis
-![Employee Analysis](images/employee-analysis.png)
- 
-Employee ranking, attendance risk list, less productive WFH employees and punctuality.
- 
-### 5. Tableau Dashboard
-![Tableau Dashboard](images/tableau-dashboard.png)
+
  
 Interactive dashboard built on a relationship between `Clean_Attendance` and `Employees`, with a department filter.
  
