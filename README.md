@@ -63,8 +63,7 @@ This project analyzes attendance data for 30 employees from January to June 2026
 | Q10 | Punctuality analysis: late arrivals by work mode and department. |
 | Q11 | Analyzes whether higher WFH participation is associated with lower productivity. |
 
-## 📊 WFH & Employee Attendance Dashboard
-- **[View the interactive dashboard](https://github.com/monuyadav202403146-lang/wfh-attendance-analysis/blob/main/wfh-dashboard.png/)**
+
  
 ## Data Cleaning Process
  
@@ -128,9 +127,7 @@ SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
  
 ## 📊 Final Dashboard
 
-## 📊 Dashboard Preview
 
-![WFH Attendance Dashboard](WFH_Attendance_Dashboard.png)
 
 
  
