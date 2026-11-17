@@ -12,6 +12,36 @@ This project analyzes attendance data for 30 employees from January to June 2026
 | `online_schema.sql` | MySQL 8.0 script containing table creation, raw data (30 employees + 3,798 attendance rows), data cleaning, and the analysis view `vw_attendance`. |
 | `online_queries.sql` | Contains 11 SQL analysis queries (Q1–Q11). |
 | `images/` | Dashboard screenshots used in this README. |
+## Dataset
+
+> The dataset is synthetic (sample data generated for this project). It is not real company data.
+
+| File | Rows | Description |
+|---|---|---|
+| [raw_attendance.csv](data/raw_attendance.csv) | 3,798 | Raw messy data (duplicates, inconsistent labels, mixed date formats, missing values) |
+| [clean_attendance.csv](data/clean_attendance.csv) | 3,750 | Cleaned data used for analysis |
+| [employees.csv](data/employees.csv) | 30 | Employee master (ID, name, department) |
+| [WFH_Attendance_Dataset.xlsx](data/WFH_Attendance_Dataset.xlsx) | - | All three datasets as sheets in one Excel file |
+
+**Period:** Jan-Jun 2026 | **Employees:** 30 | **Departments:** Sales, IT, HR, Finance, Operations, Marketing
+
+### Column description (clean_attendance.csv)
+
+| Column | Description |
+|---|---|
+| Emp_ID | Employee ID |
+| Employee_Name | Employee name |
+| Department | Sales, IT, HR, Finance, Operations or Marketing |
+| Date | Working date (yyyy-mm-dd) |
+| Work_Mode | Office or WFH |
+| Status | Present, Absent, Leave or Half Day |
+| Check_In, Check_Out | Login and logout time (HH:MM) |
+| Hours_Worked | (Check_Out - Check_In) in hours |
+| Tasks_Assigned, Tasks_Completed | Daily task counts |
+| Productivity | Tasks_Completed / Tasks_Assigned |
+| Attended | 1 if Present or Half Day, else 0 |
+| Late | 1 if check-in is after 10:00, else 0 |
+| Data_Note | Flag if a value was imputed or capped during cleaning |
  
 ## Excel Workbook Sheets
  
@@ -93,10 +123,6 @@ The project can also be executed using MySQL Workbench. First, run `online_schem
  
 SQL (MySQL 8.0) · Microsoft Excel · Tableau · GitHub
  
-## Author
- 
-**Monu Yadav**
-B.Sc. Computer Science | TSDC, Mumbai University
  
 - LinkedIn: https://www.linkedin.com/in/monu-yadav-34b59825b/
 - GitHub: https://github.com/monuyadav202403146-lang
