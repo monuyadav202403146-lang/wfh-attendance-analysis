@@ -15,13 +15,8 @@ This project analyzes attendance data for 30 employees from January to June 2026
 ## Dataset
 
 > The dataset is synthetic (sample data generated for this project). It is not real company data.
+-<ahttps://1drv.ms/x/c/ee2e7d1377aeb9e2/IQBwIg2wWWeXRqn01RYour1tAT9PWwkAFxy-xQ6G2HOg7-g?e=TtFJAN>
 
-| File | Rows | Description |
-|---|---|---|
-| [raw_attendance.csv](data/raw_attendance.csv) | 3,798 | Raw messy data (duplicates, inconsistent labels, mixed date formats, missing values) |
-| [clean_attendance.csv](data/clean_attendance.csv) | 3,750 | Cleaned data used for analysis |
-| [employees.csv](data/employees.csv) | 30 | Employee master (ID, name, department) |
-| [WFH_Attendance_Dataset.xlsx](data/WFH_Attendance_Dataset.xlsx) | - | All three datasets as sheets in one Excel file |
 
 **Period:** Jan-Jun 2026 | **Employees:** 30 | **Departments:** Sales, IT, HR, Finance, Operations, Marketing
 
